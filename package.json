@@ -1,0 +1,54 @@
+{
+  "name": "keyuser-popup",
+  "version": "1.0.0",
+  "description": "A small Windows desktop popup for the Keyuser web application.",
+  "main": "src/main.js",
+  "author": "",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "pack:win": "electron-builder --win --dir",
+    "dist:win": "electron-builder --win nsis"
+  },
+  "devDependencies": {
+    "electron": "43.0.0",
+    "electron-builder": "26.15.3",
+    "electron-updater": "6.2.1"
+  },
+  "build": {
+    "appId": "com.keyuser.popup",
+    "productName": "Keyuser Popup",
+    "asar": true,
+    "files": [
+      "src/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "icon": "build/favicon.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "artifactName": "${productName}-Setup-${version}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  },
+  "publish": {
+    "provider": "github",
+    "owner": "Buralyanak",
+    "repo": "keyuser-popup"
+  }
+}
