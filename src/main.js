@@ -5,6 +5,7 @@ const path = require('path');
 
 const APP_URL = 'https://main.d1uanrj3qjhflx.amplifyapp.com/';
 const SETTINGS_PATH = path.join(app.getPath('userData'), 'settings.json');
+const ICON_PATH = path.join(__dirname, '..', 'build', 'chaticon.png');
 
 let mainWindow;
 let settingsWindow = null;
@@ -105,8 +106,7 @@ function applySettings(settings) {
 }
 
 function createTray() {
-  const iconPath = path.join(__dirname, '..', 'build', 'chaticon.svg');
-  const trayIcon = nativeImage.createFromPath(iconPath);
+  const trayIcon = nativeImage.createFromPath(ICON_PATH);
 
   tray = new Tray(trayIcon.isEmpty() ? undefined : trayIcon);
 
@@ -197,6 +197,7 @@ function createSettingsWindow() {
     resizable: false,
     show: false,
     title: 'Keyuser Popup Settings',
+    icon: ICON_PATH,
     autoHideMenuBar: true,
     backgroundColor: '#f5f7fb',
     webPreferences: {
@@ -287,6 +288,7 @@ function createWindow() {
     minWidth: 360,
     minHeight: 520,
     show: false,
+    icon: ICON_PATH,
     autoHideMenuBar: true,
     backgroundColor: '#ffffff',
     title: 'Keyuser Popup',

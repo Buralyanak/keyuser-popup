@@ -26,14 +26,13 @@
       "src/**/*",
       "build/chaticon.svg",
       "build/chaticon.png",
-      "build/chaticon.ico",
       "package.json"
     ],
     "directories": {
       "output": "dist"
     },
     "win": {
-      "icon": "build/chaticon",
+      "icon": "build/chaticon.png",
       "target": [
         {
           "target": "nsis",
