@@ -105,7 +105,7 @@ function applySettings(settings) {
 }
 
 function createTray() {
-  const iconPath = path.join(__dirname, '..', 'build', 'favicon.ico');
+  const iconPath = path.join(__dirname, '..', 'build', 'chaticon.svg');
   const trayIcon = nativeImage.createFromPath(iconPath);
 
   tray = new Tray(trayIcon.isEmpty() ? undefined : trayIcon);

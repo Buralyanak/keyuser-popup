@@ -26,7 +26,7 @@ The installer will be created in the `dist` folder.
 
 ## Change the icon
 
-Replace `build/favicon.ico`, then rebuild:
+Replace `build/chaticon.svg` with the latest chat icon SVG, then rebuild:
 
 ```powershell
 npm.cmd run dist:win

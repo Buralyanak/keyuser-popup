@@ -1,6 +1,6 @@
 {
   "name": "keyuser-popup",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "A small Windows desktop popup for the Keyuser web application.",
   "main": "src/main.js",
   "author": "",
@@ -13,7 +13,9 @@
   },
   "devDependencies": {
     "electron": "43.0.0",
-    "electron-builder": "26.15.3",
+    "electron-builder": "26.15.3"
+  },
+  "dependencies": {
     "electron-updater": "6.2.1"
   },
   "build": {
@@ -22,13 +24,16 @@
     "asar": true,
     "files": [
       "src/**/*",
+      "build/chaticon.svg",
+      "build/chaticon.png",
+      "build/chaticon.ico",
       "package.json"
     ],
     "directories": {
       "output": "dist"
     },
     "win": {
-      "icon": "build/favicon.ico",
+      "icon": "build/chaticon",
       "target": [
         {
           "target": "nsis",
